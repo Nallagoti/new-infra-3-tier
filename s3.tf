@@ -1,10 +1,15 @@
-# Create an S3 Bucket
+provider "aws" {
+  region = "ap-south-1"
+}
 resource "aws_s3_bucket" "example_bucket" {
-  bucket = "swiggy-bucket-terraform-123demo"
+  bucket = "nissitha-demo-bucket-12345"
+}
 
-  # Enable versioning
-  versioning {
-    enabled = true
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = aws_s3_bucket.example_bucket.id
+
+  versioning_configuration {
+    status = "Enabled"
   }
 }
 
