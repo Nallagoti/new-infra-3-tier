@@ -1,6 +1,4 @@
-provider "aws" {
-  region = "ap-south-1"
-}
+
 resource "aws_s3_bucket" "example_bucket" {
   bucket = "nissitha-demo-bucket-12345"
 }
